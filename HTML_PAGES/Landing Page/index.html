@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Anything | Ecommerce store</title>
         <link rel="stylesheet" href="style.css"> 
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,18 +15,20 @@
         <div class="container">
         <div class="navbar">
             <div class="logo">
-                <img src="images/anything.svg" width="100px">
+                <img src="images/anything1.jpeg" width="100px">
             </div>
             <nav> 
-                <ul>
+                <ul id="MenuItems">
                     <li><a href="">Home</a></li>
                     <li><a href="">Products</a></li>
                     <li><a href="">Contact</a></li>
                     <li><a href="">About</a></li>
-                    <li><a href="">Account</a></li>
+                    <li><a href="">Seller Account</a></li>
+                    <li><a href="">Customer Account</a></li>
                 </ul>
             </nav>
             <img src="images/cart.png" width="30px" height="30px">
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
         <div class="row">
             <div class="col-2">
@@ -46,12 +49,12 @@
 
 <!------featured categories ------>
 <div class="categories">
-    <div class="small-container">
+    
         <div class="row">
             <div class="col_3"><img src="images/category1.jpg"></div>  
-            <div class="col_3"><img src="images/category2.jpg"></div>
-            <div class="col_3"><img src="images/category3.jpg"></div>
-    </div>
+            <div class="col_3"><img src="images/category2.jpeg"></div>
+            <div class="col_3"><img src="images/category3.png"></div>
+    
     
     </div>
 </div>
@@ -112,10 +115,268 @@
 
 </div>
     </div>
+    <h2 div class="title">Latest Products </h2>
+
+    <div class="row">
+        <div class="col-4">
+            <img src="images/product5.jpg">
+            <h4>Peacock Navy </h4>
+            <div class="rating">
+               <span><i class="fa fa-star"></i></span> 
+               <span><i class="fa fa-star"></i></span> 
+               <span><i class="fa fa-star"></i></span> 
+               <span><i class="fa fa-star"></i></span> 
+                <span><i class="fa fa-star-o"></i></span>
+            </div>
+            <p>$33.00</p>
+
+    </div>
+    <div class="col-4">
+        <img src="images/product6.jpg">
+        <h4>Carter x-Edition</h4>
+        <div class="rating">
+           <span><i class="fa fa-star"></i></span> 
+           <span><i class="fa fa-star"></i></span> 
+           <span><i class="fa fa-star"></i></span> 
+           <span><i class="fa fa-star"></i></span> 
+            <span><i class="fa fa-star"></i></span>
+        </div>
+        <p>$100.00</p>
+
 </div>
+<div class="col-4">
+    <img src="images/product7.jpg">
+    <h4>Royal black trouser</h4>
+    <div class="rating">
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star-o"></i></span> 
+       <span><i class="fa fa-star-o"></i></span> 
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <p>$59.00</p>
 
+</div>
+<div class="col-4">
+    <img src="images/product8.jpg">
+    <h4>Floral edition </h4>
+    <div class="rating">
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star"></i></span> 
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <p>$4.00</p>
 
+</div>
+<div class="col-4">
+    <img src="images/product9.jpg">
+    <h4>Floral edition </h4>
+    <div class="rating">
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star"></i></span> 
+        <span><i class="fa fa-star"></i></span>
+    </div>
+    <p>$67.00</p>
 
+</div>
+<div class="col-4">
+    <img src="images/product10.jpg">
+    <h4>Floral edition </h4>
+    <div class="rating">
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star-half-o"></i></span> 
+       <span><i class="fa fa-star-o"></i></span> 
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <p>$144.00</p>
+
+</div>
+<div class="col-4">
+    <img src="images/product11.jpg">
+    <h4>Floral edition </h4>
+    <div class="rating">
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star"></i></span> 
+        <span><i class="fa fa-star-half-o"></i></span>
+    </div>
+    <p>$88.00</p>
+
+</div>
+<div class="col-4">
+    <img src="images/product12.jpg">
+    <h4>Floral edition </h4>
+    <div class="rating">
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star"></i></span> 
+       <span><i class="fa fa-star-half-o"></i></span> 
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <p>$15.00</p>
+
+</div>
+    </div>
+</div>
+<!------- offer -------->
+<div class="offer">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/exclusive.png" class="offer-img">
+                </div>
+                <div class="col-2">
+                    <p>Exclusively Aailable on our platform</p>
+                     <h1>Smart Band 4</h1>
+                     <small>The Mi Smart Band 4 features a 39.9% larger(than Mi Band 3)
+                         AMOLED color full-touch display with adjustable brightness, <source>everything is clear as can be.
+                     </small>
+                     <a href="" class="btn">Buy Now &#8594;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------- testimonial -------->
+    <div class="testimonial">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.
+                    </p>
+                    <div class="rating">
+                        <span><i class="fa fa-star"></i></span> 
+                        <span><i class="fa fa-star"></i></span> 
+                        <span><i class="fa fa-star"></i></span> 
+                        <span><i class="fa fa-star-half-o"></i></span> 
+                         <span><i class="fa fa-star-o"></i></span>
+                     </div>
+                     <img src="images/user1.png">
+                     <h3>Ramnujan Mahajan</h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.
+                    </p>
+                    <div class="rating">
+                        <span><i class="fa fa-star"></i></span> 
+                        <span><i class="fa fa-star"></i></span> 
+                        <span><i class="fa fa-star"></i></span> 
+                        <span><i class="fa fa-star"></i></span> 
+                         <span><i class="fa fa-star"></i></span>
+                     </div>
+                     <img src="images/user2.png">
+                     <h3>Neha Misra</h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.
+                    </p>
+                    <div class="rating">
+                        <span><i class="fa fa-star"></i></span> 
+                        <span><i class="fa fa-star"></i></span> 
+                        <span><i class="fa fa-star"></i></span> 
+                        <span><i class="fa fa-star"></i></span> 
+                         <span><i class="fa fa-star-o"></i></span>
+                     </div>
+                     <img src="images/user3.png">
+                     <h3>Virat Das</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-----------brands -------------->
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="images/brand1.png">
+                </div>
+                <div class="col-5">
+                    <img src="images/brand2.png">
+                </div>
+                <div class="col-5">
+                    <img src="images/brand3.png">
+                </div>
+                <div class="col-5">
+                    <img src="images/brand4.png">
+                </div>
+                <div class="col-5">
+                    <img src="images/brand5.png">
+                </div>
+                <div class="col-5">
+                    <img src="images/brand6.png">
+                </div>
+            </div>
+        </div>
+    </div>
+<!---------footer--------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download our App</h3>
+                <p>Download App for Android and ios mobile phone.</p>
+           <div class="app-logo">
+               <img src="images/playstore.png">
+               <img src="images/appstore.png">
+           </div>
+            </div>
+            <div class="footer-col-2">
+               <img src="images/anything.jpeg">
+                <p>Our purpose is to fulfill the daily requirments of the community as cheaply as possible.</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyright 2021 - anything platform</p>
+    </div>
+</div>
+<!----------js for toggle menue-------->
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+    function menutoggle(){
+        if(MenuItems.style.maxHeight == "0px")
+        {
+           MenuItems.style.maxHeight="200px"; 
+        }
+        else
+        {
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+</script>
 
     </body>
 </html>
