@@ -72,6 +72,9 @@ nav ul{
     background: #563434;
 
 }
+.header1{
+    background: radial-gradient(#fff,#fbffd6);
+}
 .header{
     background: radial-gradient(#fff,#ffd6d6);
 }
@@ -520,3 +523,6 @@ form a{
     transform: translateX(100px);
     transition: transform 1s;
 }
+
+
+
