@@ -16,6 +16,24 @@ body{
 }
 #head{
     font-size: 1.8em;
+    text-align: center;
+    margin: 0 auto 10px;
+    position: relative;
+    line-height: 60px;
+    color:#fff;
+}
+
+#head::after{
+    content:  '';
+    background: #ff523b;
+    width: 200px;
+    height: 5px;
+    border-radius:  5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
 #subheading{
     font-size: 18px;
@@ -186,3 +204,12 @@ nav ul{
      padding-left: 25px;
      padding-right: 25px;
  }
+
+ .title{
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+
+}
