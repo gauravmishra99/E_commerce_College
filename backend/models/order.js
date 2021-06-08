@@ -23,8 +23,42 @@ const orderSchema = new mongoose.Schema({
         type: Number,
         required: true,
       },
+      quantity: {
+        type: Number,
+        required: true,
+      },
     },
   ],
+  deliveryDetails: {
+    name: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
+    },
+    town: {
+      type: String,
+      required: true,
+    },
+    state: {
+      type: String,
+      required: true,
+    },
+    pin: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+  },
   datePlacedOn: {
     type: Date,
     required: true,
@@ -40,7 +74,15 @@ const orderSchema = new mongoose.Schema({
   },
   dateDelivered: {
     type: Date,
-  }
+  },
+  razorpayOrderId: {
+    type: String,
+    default: "",
+  },
+  razorpayPaymentId: {
+    type: String,
+    default: "",
+  },
 });
 
 const Order = mongoose.model("Order", orderSchema);

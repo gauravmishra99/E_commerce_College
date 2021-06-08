@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
 
 const sellerSchema = new mongoose.Schema(
   {
@@ -34,15 +34,21 @@ const sellerSchema = new mongoose.Schema(
         }
       },
     },
-    age: {
-      type: Number,
-      default: 0,
-      validate(value) {
-        if (value < 0) {
-          throw new Error("Age must be a positive number");
-        }
-      },
+    address: {
+      type: String,
+      required: true,
     },
+    phonenumber: {
+      type: Number,
+      required: true,
+    },
+    orders: [
+      {
+        orderId: {
+          type: mongoose.Schema.Types.ObjectId,
+        },
+      },
+    ],
     tokens: [
       {
         token: {
@@ -83,30 +89,30 @@ sellerSchema.methods.toJSON = function () {
   return sellerObject;
 };
 
-sellerSchema.statics.findByCredentials = async (email,password) => {
-  const seller = await Seller.findOne({email});
-  if(!seller){
-    throw new Error("Unable to Login")
+sellerSchema.statics.findByCredentials = async (email, password) => {
+  const seller = await Seller.findOne({ email });
+  if (!seller) {
+    throw new Error("Unable to Login");
   }
 
   const isMatch = await bcrypt.compare(password, seller.password);
-  if(!isMatch){
-    throw new Error("Unable to Login")
+  if (!isMatch) {
+    throw new Error("Unable to Login");
   }
 
   return seller;
-}
+};
 
 //Hashing the plain text passwords before saving
-sellerSchema.pre("save", async function(next){
+sellerSchema.pre("save", async function (next) {
   const seller = this;
 
-  if(seller.isModified("password")){
+  if (seller.isModified("password")) {
     seller.password = await bcrypt.hash(seller.password, 8);
   }
 
   next();
-})
+});
 
 const Seller = mongoose.model("Seller", sellerSchema);
 

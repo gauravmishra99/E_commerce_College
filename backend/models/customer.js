@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs")
+const bcrypt = require("bcryptjs");
 
 const customerSchema = new mongoose.Schema(
   {
@@ -52,6 +52,10 @@ const customerSchema = new mongoose.Schema(
         item: {
           type: mongoose.Schema.Types.ObjectId,
         },
+        quantity: {
+          type: Number,
+          default: 1,
+        },
       },
     ],
     tokens: [
@@ -88,32 +92,32 @@ customerSchema.methods.toJSON = function () {
   delete customerObject.tokens;
 
   return customerObject;
-}
+};
 
-customerSchema.statics.findByCredentials = async (email,password) => {
-  const customer = await Customer.findOne({email});
-  if(!customer){
-    throw new Error("Unable to Login")
+customerSchema.statics.findByCredentials = async (email, password) => {
+  const customer = await Customer.findOne({ email });
+  if (!customer) {
+    throw new Error("Unable to Login");
   }
 
   const isMatch = await bcrypt.compare(password, customer.password);
-  if(!isMatch){
-    throw new Error("Unable to Login")
+  if (!isMatch) {
+    throw new Error("Unable to Login");
   }
 
   return customer;
-}
+};
 
 //Hashing the plain text passwords before saving
-customerSchema.pre("save", async function(next){
+customerSchema.pre("save", async function (next) {
   const customer = this;
 
-  if(customer.isModified("password")){
+  if (customer.isModified("password")) {
     customer.password = await bcrypt.hash(customer.password, 8);
   }
 
   next();
-})
+});
 
 const Customer = mongoose.model("Customer", customerSchema);
 

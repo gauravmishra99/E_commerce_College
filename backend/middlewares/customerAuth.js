@@ -3,13 +3,12 @@ const Customer = require("../models/customer");
 
 const customerAuth = async (req, res, next) => {
   try {
-    const token = req.header("Authorization").replace("Bearer ", "");
+    const token = req.cookies.token;
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const customer = await Customer.findOne({
       _id: decoded._id,
       "tokens.token": token,
     });
-
     if (!customer) {
       throw new Error();
     }

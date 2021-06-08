@@ -3,16 +3,16 @@ const Seller = require("../models/seller");
 
 const sellerAuth = async (req, res, next) => {
   try {
-    const token = req.header("Authorization").replace("Bearer ", "");
+    const token = req.cookies.token;
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const seller = await Seller.findOne({
       _id: decoded._id,
       "tokens.token": token,
     });
-
     if (!seller) {
       throw new Error();
     }
+  
     req.token = token;
     req.seller = seller;
     next();
